@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Svetlana/CLionProjects/cats_2/1D/main.cpp
+iostream
+-
+cstdio
+-
+cstdlib
+-
+vector
+-
+algorithm
+-
+cmath
+-
+stack
+-
+functional
+-
+set
+-
+queue
+-
+string
+-
+map
+-
+iomanip
+-
+sstream
+-
+cassert
+-
+set.h
+C:/Users/Svetlana/CLionProjects/cats_2/1D/set.h
+
+C:/Users/Svetlana/CLionProjects/cats_2/1D/set.h
+vector
+-
+

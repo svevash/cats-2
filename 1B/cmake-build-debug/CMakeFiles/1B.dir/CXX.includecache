@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Svetlana/CLionProjects/cats_2/1B/main.cpp
+cassert
+-
+iostream
+-
+vector
+-
+functional
+-
+num.h
+C:/Users/Svetlana/CLionProjects/cats_2/1B/num.h
+num.cpp
+C:/Users/Svetlana/CLionProjects/cats_2/1B/num.cpp
+
+C:/Users/Svetlana/CLionProjects/cats_2/1B/num.cpp
+num.h
+C:/Users/Svetlana/CLionProjects/cats_2/1B/num.h
+
+C:/Users/Svetlana/CLionProjects/cats_2/1B/num.h
+iostream
+-
+
