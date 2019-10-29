@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Svetlana/CLionProjects/cats_2/1F/buffered_reader.h
+
+C:/Users/Svetlana/CLionProjects/cats_2/1F/main.cpp
+iostream
+-
+string
+-
+cstdint
+-
+algorithm
+-
+cstdlib
+-
+cstring
+-
+memory
+-
+buffered_reader.h
+C:/Users/Svetlana/CLionProjects/cats_2/1F/buffered_reader.h
+
