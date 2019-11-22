@@ -47,10 +47,10 @@ RM = "C:\Program Files\JetBrains\CLion 2018.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Svetlana\CLionProjects\cats_2\2C
+CMAKE_SOURCE_DIR = C:\Users\Svetlana\CLionProjects\cats_2\2D
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Svetlana\CLionProjects\cats_2\2C\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Svetlana\CLionProjects\cats_2\2D\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Svetlana\CLionProjects\cats_2\2C\cmake-build-debug\CMakeFiles C:\Users\Svetlana\CLionProjects\cats_2\2C\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Svetlana\CLionProjects\cats_2\2D\cmake-build-debug\CMakeFiles C:\Users\Svetlana\CLionProjects\cats_2\2D\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Svetlana\CLionProjects\cats_2\2C\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Svetlana\CLionProjects\cats_2\2D\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 2C
+# Target rules for targets named 2D
 
 # Build rule for target.
-2C: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 2C
-.PHONY : 2C
+2D: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 2D
+.PHONY : 2D
 
 # fast build rule for target.
-2C/fast:
-	$(MAKE) -f CMakeFiles\2C.dir\build.make CMakeFiles/2C.dir/build
-.PHONY : 2C/fast
+2D/fast:
+	$(MAKE) -f CMakeFiles\2D.dir\build.make CMakeFiles/2D.dir/build
+.PHONY : 2D/fast
 
 main.obj: main.cpp.obj
 
@@ -128,7 +128,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\2C.dir\build.make CMakeFiles/2C.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\2D.dir\build.make CMakeFiles/2D.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -137,7 +137,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\2C.dir\build.make CMakeFiles/2C.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\2D.dir\build.make CMakeFiles/2D.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -146,7 +146,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\2C.dir\build.make CMakeFiles/2C.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\2D.dir\build.make CMakeFiles/2D.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -155,7 +155,7 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... 2C
+	@echo ... 2D
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... main.obj

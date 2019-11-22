@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Svetlana/CLionProjects/cats_2/2C/factory.h
+
+C:/Users/Svetlana/CLionProjects/cats_2/2C/main.cpp
+iostream
+-
+cstdio
+-
+cstdlib
+-
+vector
+-
+algorithm
+-
+cmath
+-
+stack
+-
+functional
+-
+set
+-
+queue
+-
+string
+-
+memory
+-
+map
+-
+iomanip
+-
+sstream
+-
+cassert
+-
+factory.h
+C:/Users/Svetlana/CLionProjects/cats_2/2C/factory.h
+

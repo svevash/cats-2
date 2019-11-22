@@ -3,4 +3,4 @@ project(2C)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(2C main.cpp factory.h factory2.cpp)
+add_executable(2C main.cpp factory.h)
