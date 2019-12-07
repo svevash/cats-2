@@ -121,6 +121,12 @@ class MethodDeclarationNode: public BaseNode {
 
 
 
+
+
+
+
+
+
 class FormatVisitor: public BaseVisitor {
  public:
   void Visit(const BaseNode* node) override {
@@ -128,19 +134,74 @@ class FormatVisitor: public BaseVisitor {
   }
 
   void Visit(const ClassDeclarationNode* node) override {
-
+      code.push_back(recursionlevel + "class " + node->ClassName() + " {");
+      recursionlevel += "  ";
+      if (!node->PublicFields().empty()) {
+          code.emplace_back(recursionlevel + "public:");
+          recursionlevel += "  ";
+          for (auto i : node->PublicFields()) {
+              i->Visit(this);
+          }
+          recursionlevel.resize(recursionlevel.size() - 2);
+      }
+      if (!node->ProtectedFields().empty()) {
+          code.emplace_back("");
+          code.emplace_back(recursionlevel + "protected:");
+          recursionlevel += "  ";
+          for (auto i : node->ProtectedFields()) {
+              i->Visit(this);
+          }
+          recursionlevel.resize(recursionlevel.size() - 2);
+      }
+      if (!node->PrivateFields().empty()) {
+          code.emplace_back("");
+          code.emplace_back(recursionlevel + "private:");
+          recursionlevel += "  ";
+          for (auto i : node->PrivateFields()) {
+              i->Visit(this);
+          }
+          recursionlevel.resize(recursionlevel.size() - 2);
+      }
+      recursionlevel.resize(recursionlevel.size() - 2);
+      code.emplace_back(recursionlevel + "};");
   }
   void Visit(const VarDeclarationNode* node) override {
-
+      if (method) {
+          code[argumentsindex] += node->TypeName() + " " + node->VarName() + ", ";
+      }
+      else {
+          code.push_back(recursionlevel + node->TypeName() + " " + node->VarName() + ";");
+      }
   }
   void Visit(const MethodDeclarationNode* node) override {
-
+      code.push_back(recursionlevel + node->ReturnTypeName() + " " + node->MethodName());
+      unsigned int k = code.size() - 1;
+      method = true;
+      argumentsindex = code.size() - 1;
+      code[argumentsindex] += "(";
+      if (node->Arguments().size() != 0) {
+          for (auto i : node->Arguments()) {
+              i->Visit(this);
+          }
+          code[argumentsindex].resize(code[argumentsindex].size() - 2);
+      }
+      code[argumentsindex] += ");";
+      method = false;
   }
 
   const std::vector<std::string>& GetFormattedCode() const {
-
+      return code;
   }
+ private:
+  std::vector<std::string> code;
+  bool method;
+  int argumentsindex;
+  std::string recursionlevel = "";
 };
+
+
+
+
 
 
 

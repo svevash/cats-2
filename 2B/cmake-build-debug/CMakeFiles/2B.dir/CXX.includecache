@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Svetlana/CLionProjects/cats_2/2B/SmartPointer.h
+memory
+-
+Test.h
+C:/Users/Svetlana/CLionProjects/cats_2/2B/Test.h
+
+C:/Users/Svetlana/CLionProjects/cats_2/2B/Test.h
+iostream
+-
+string
+-
+cxxabi.h
+-
+memory
+-
+
+C:/Users/Svetlana/CLionProjects/cats_2/2B/Test_SmartPointer.h
+SmartPointer.h
+C:/Users/Svetlana/CLionProjects/cats_2/2B/SmartPointer.h
+cstdint
+-
+memory
+-
+chrono
+-
+random
+-
+list
+-
+
+C:/Users/Svetlana/CLionProjects/cats_2/2B/main.cpp
+iostream
+-
+SmartPointer.h
+C:/Users/Svetlana/CLionProjects/cats_2/2B/SmartPointer.h
+Test_SmartPointer.h
+C:/Users/Svetlana/CLionProjects/cats_2/2B/Test_SmartPointer.h
+

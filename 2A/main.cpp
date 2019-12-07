@@ -3,77 +3,66 @@
 
 class PageAllocator {
     const std::uint64_t page_size_;
-    std::vector<void*> pages_;
+    std::vector<void*> fuck_obama_;
 
 public:
     PageAllocator(std::uint64_t page_size) : page_size_(page_size) {
     }
 
     ~PageAllocator() {
-        for (void* page : pages_)
+        for (void* page : fuck_obama_)
             ::operator delete(page);
     }
 
     void* Allocate() {
         void* page = ::operator new(page_size_);
-        pages_.push_back(page);
+        fuck_obama_.push_back(page);
         return page;
     }
 
     std::uint64_t Allocated() const noexcept {
-        return pages_.size();
+        return fuck_obama_.size();
     }
 };
 
 #include <vector>
+#include <vector>
 template<typename Tp>
 class FixedAllocator {
   PageAllocator page_allocator_;
-  std::vector<Tp*> freemem_, usedmem_;
-  const std::uint64_t pages;
+  std::uint64_t fuck_obama = 0;
+  std::vector<Tp *> fuck_klevch;
 
  public:
   explicit FixedAllocator(std::uint64_t page_size) :
-  page_allocator_(page_size * sizeof(Tp)),
-  freemem_(),  usedmem_(), pages(page_size){
-      Tp* p = reinterpret_cast<Tp*>(page_allocator_.Allocate());
-      freemem_.push_back(p);
-      for (std::uint64_t i = 0; i < page_size - 1; i++) {
-          p++;
-          freemem_.push_back(p);
-      }
+      page_allocator_(page_size * sizeof(Tp)) {
+      fuck_obama = page_size;
   }
 
   Tp* Allocate() {
-      Tp* p;
-      if (freemem_.empty()) {
-          Tp* pp = reinterpret_cast<Tp*>(page_allocator_.Allocate());
-          freemem_.push_back(pp);
-          for (std::uint64_t i = 0; i < pages - 1; i++) {
-              pp++;
-              freemem_.push_back(pp);
+      if (fuck_klevch.empty()) {
+          Tp * start;
+          start = static_cast<Tp *>(page_allocator_.Allocate());
+          fuck_klevch.push_back(start);
+          for (auto i = 0; i < fuck_obama - 1; ++i) {
+              start++;
+              fuck_klevch.push_back(start);
           }
       }
-
-      p = freemem_[freemem_.size() - 1];
-      freemem_.pop_back();
-      usedmem_.push_back(p);
-      return p;
+      auto obama = fuck_klevch[fuck_klevch.size() - 1];
+      fuck_klevch.resize(fuck_klevch.size() - 1);
+      return obama;
   }
 
   void Deallocate(Tp* p) {
-      freemem_.push_back(p);
-      for (std::uint64_t i = 0; i < usedmem_.size(); i++) {
-          if (usedmem_[i] == p) {
-              usedmem_.erase(usedmem_.begin() + i);
-          }
-      }
+      fuck_klevch.push_back(p);
   }
 
   const PageAllocator& InnerAllocator() const noexcept {
       return page_allocator_;
   }
 };
+
 
 int main()
 {

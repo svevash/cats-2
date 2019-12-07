@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Svetlana/CLionProjects/cats_2/fixed_allocator/main.cpp
+C:/Users/Svetlana/CLionProjects/cats_2/2A/main.cpp
 iostream
+-
+vector
 -
 vector
 -

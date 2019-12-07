@@ -1,0 +1,3 @@
+C:/Users/Svetlana/CLionProjects/cats_2/2B/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Svetlana/CLionProjects/cats_2/2B/cmake-build-debug/CMakeFiles/2B.dir
+C:/Users/Svetlana/CLionProjects/cats_2/2B/cmake-build-debug/CMakeFiles/edit_cache.dir
