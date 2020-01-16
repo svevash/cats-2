@@ -1,0 +1,1 @@
+/usr/bin/g++  -pthread -g   CMakeFiles/4B.dir/main.cpp.o  -o 4B 

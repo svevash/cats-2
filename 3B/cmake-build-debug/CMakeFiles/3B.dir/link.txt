@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/3B.dir/main.cpp.o  -o 3B 

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/Svetlana/CLionProjects/cats_2/math26/main.cpp
+iostream
+-
+vector
+-
+memory
+-
+cmath
+-
+iomanip
+-
+

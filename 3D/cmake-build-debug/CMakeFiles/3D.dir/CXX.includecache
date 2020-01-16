@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/Svetlana/CLionProjects/cats_2/3D/main.cpp
+iostream
+-
+unordered_set
+-
+unordered_map
+-
+vector
+-
+queue
+-
+exception
+-
+

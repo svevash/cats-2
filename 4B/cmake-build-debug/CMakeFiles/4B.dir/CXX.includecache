@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/Svetlana/CLionProjects/cats_2/4B/main.cpp
+thread
+-
+tuple
+-
+iostream
+-
+chrono
+-
+cassert
+-
+vector
+-
+cstdint
+-
+future
+-
+random
+-
+fstream
+-
+functional
+-
+
