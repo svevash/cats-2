@@ -81,14 +81,14 @@ DenseMat ReadMat(std::ifstream& input) {
 
 
 
-void part(const DenseMat& a, const DenseMat& b, int *s, int size) {
+void part(const DenseMat& a, const DenseMat& b, int *start, int *s, int size) {
     for (int k = 0; k < size; k++) {
-        int row = k / b.Cols();
-        int col = k % b.Cols();
+        int row = std::distance(start, s) / b.Cols();
+        int col = std::distance(start, s) % b.Cols();
         for (int i = 0; i < b.Rows(); i++) {
             *s += a(row, i) * b(i, col);
-            s++;
         }
+        s++;
     }
 }
 
@@ -102,9 +102,11 @@ DenseMat MatMulParal(const DenseMat& a, const DenseMat& b, int thread_count) {
     t.reserve(thread_count);
 
     for (int i = 0; i < thread_count - 1; i++) {
-        t.emplace_back(std::bind(&part, a, b, data.data() + i * ln, ln));
+        t.emplace_back(std::bind(&part, a, b, &data[0], &data[i * ln], ln));
+        //part( a, b, &data[i * ln], ln);
     }
-    t.emplace_back(std::bind(&part, a, b, data.data() + (thread_count - 1) * ln, ln + matSize % thread_count));
+    t.emplace_back(std::bind(&part, a, b, &data[0], &data[(thread_count - 1) * ln], ln + matSize % thread_count));
+    //part( a, b, &data[(thread_count - 1) * ln], ln + matSize % thread_count);
     //part(a, b, data, (thread_count - 1) * ln, ln + matSize % thread_count);
 
     for (auto &i : t) {
@@ -160,20 +162,20 @@ int main(int argc, char** argv) {
     std::mt19937 gen(12312);
 
     std::cerr << "Generating random matrices..." << std::endl;
-    //auto a = RandomMat(100, 1000, gen);
-    //auto b = RandomMat(1000, 100, gen);
+    auto a = RandomMat(100, 1000, gen);
+    auto b = RandomMat(1000, 100, gen);
 
-    std::vector<int32_t> data1;
-    std::vector<int32_t> data2;
-    data1.reserve(18);
-    for (int i = 0; i < 18; i++) {
-        data1.push_back(i);
-    }
-    for (int i = 0; i < 24; i++) {
-        data2.push_back(i);
-    }
-    auto a = DenseMat(3, 6, data1);
-    auto b = DenseMat(6, 4, data2);
+//    std::vector<int32_t> data1;
+//    std::vector<int32_t> data2;
+//    data1.reserve(18);
+//    for (int i = 0; i < 18; i++) {
+//        data1.push_back(i);
+//    }
+//    for (int i = 0; i < 24; i++) {
+//        data2.push_back(i);
+//    }
+//    auto a = DenseMat(3, 6, data1);
+//    auto b = DenseMat(6, 4, data2);
 
     std::cerr << "Start benchmarking..." << std::endl;
 
@@ -192,16 +194,16 @@ int main(int argc, char** argv) {
 
         assert(mat_res == ans);
 
-//        std::cerr << "Thread count: " << tcount << std::endl;
-//        std::cerr << "Time, ms: " << mul_ms << std::endl;
-//
-//        if (tcount <= best_thread_count) {
-//            assert(mul_ms < last_time);
-//            last_time = mul_ms;
-//        }
+        std::cerr << "Thread count: " << tcount << std::endl;
+        std::cerr << "Time, ms: " << mul_ms << std::endl;
+
+        if (tcount <= best_thread_count) {
+            assert(mul_ms < last_time);
+            last_time = mul_ms;
+        }
     }
 
-//    assert(last_time < 140);
+    assert(last_time < 140);
 
     std::cerr << "Trivial ms: " << trivial_ms << std::endl;
     std::cout << 1 << std::endl;

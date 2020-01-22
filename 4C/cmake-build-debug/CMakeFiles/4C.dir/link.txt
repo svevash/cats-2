@@ -1,1 +1,1 @@
-/usr/bin/g++  -g   CMakeFiles/4C.dir/main.cpp.o  -o 4C 
+/usr/bin/g++  -pthread -g   CMakeFiles/4C.dir/main.cpp.o  -o 4C 
